@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+rm -rf pytorch_sphinx_theme.egg-info
+rm -rf build
+rm -rf dist
+
+pip uninstall -y pytorch_sphinx_theme
+
+python setup.py bdist_wheel && cd dist && pip install pytorch_sphinx_theme-0.0.24-py2.py3-none-any.whl && cd - || exit
